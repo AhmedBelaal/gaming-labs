@@ -18,15 +18,17 @@ public class PlayerControl : MonoBehaviour
 
     public LayerMask whatIsGround;
     private bool grounded;
+    private Animator anim;
     
     void Start()
     {
-   
+   anim = GetComponent<Animator>();
     }
 
     
     void Update()
     {
+
      if (Input.GetKeyDown(Spacebar) && grounded) 
      {
         Jump();
@@ -35,7 +37,7 @@ public class PlayerControl : MonoBehaviour
      if (Input.GetKey(Left)) 
      {
         GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
+       
         if (GetComponent<SpriteRenderer>()!= null) {
             GetComponent<SpriteRenderer>().flipX = true;
         }
@@ -44,12 +46,14 @@ public class PlayerControl : MonoBehaviour
      if (Input.GetKey(Right)) 
      {
         GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
+        
       if (GetComponent<SpriteRenderer>()!= null) {
             GetComponent<SpriteRenderer>().flipX = false;
         }
      }
-    
+     anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+    anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
+    anim.SetBool("Grounded", grounded);
     }
     void Jump() {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);

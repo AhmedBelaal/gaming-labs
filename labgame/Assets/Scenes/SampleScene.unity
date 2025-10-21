@@ -469,8 +469,9 @@ GameObject:
   - component: {fileID: 386075851}
   - component: {fileID: 386075850}
   - component: {fileID: 386075854}
+  - component: {fileID: 386075855}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Bobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,7 +523,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &386075852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -606,13 +607,33 @@ MonoBehaviour:
   moveSpeed: 12
   jumpHeight: 15
   Spacebar: 32
-  Left: 97
-  Right: 100
+  Left: 276
+  Right: 275
   groundCheck: {fileID: 1603205635}
   groundCheckRadius: 0.3
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+--- !u!95 &386075855
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386075849}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22aafd506b8094049a06911d2345ede9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
